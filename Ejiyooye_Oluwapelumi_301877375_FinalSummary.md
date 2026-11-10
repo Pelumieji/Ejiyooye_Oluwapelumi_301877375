@@ -26,7 +26,7 @@ I used a temporary counter on product to test COMMIT, ROLLBACK and READ COMMITTE
 
 ## Portfolio 4: NoSQL and Advanced Data Models
 
-I used order_events for the case's event documents. MongoDB inserted 2 sample events and returned the expected results for 4 queries. Validation rejected an invalid date type and a duplicate event ID. Embedded snapshots keep related details with an event, while the details field can differ by event type. These are fictional events; PostgreSQL continues to enforce its relational rules.
+I used order_events for the case's event documents. MongoDB inserted 2 sample events and returned the expected results for 4 queries. Validation rejected an invalid date type and a duplicate event ID. Attached snapshots keep related details with an event, while the details field can differ by event type. These are fictional events; PostgreSQL continues to enforce its relational rules.
 
 ## Repository and evidence
 
