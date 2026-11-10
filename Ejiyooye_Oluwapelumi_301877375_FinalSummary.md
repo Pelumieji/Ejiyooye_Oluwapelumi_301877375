@@ -4,11 +4,11 @@
 
 ## Case study
 
-My case study is E-commerce Platform. I designed the database for customers browse products and place orders. and store staff review orders and product sales., with separate tables named customer, product, order_header and order_item. It supports these operations: create a product with a unique SKU; place an order containing one or more product items; review order details and summarize product sales.
+My case study is an E-commerce Platform. I designed the database for customers to search for products and make purchases. The store staff review customer orders and product sales with separate tables named customer, product, order_header and order_item. This supports these operations: create a product with a unique SKU; place an order containing one or more product items; review order details and summarize product sales.
 
 ## Portfolio 1: Database Design and Modelling
 
-I organised the relational design into 4 tables. Primary keys identify records, foreign keys preserve the links, and checks enforce the stated business rules. An order item must have a quantity greater than zero. The normalisation examples show the sample data at 1NF, 2NF and 3NF. All 13 deliberately invalid inserts were rejected without changing the valid sample rows.
+I organised the relational design into 4 tables. Primary keys identify records, foreign keys preserve the links, and checks enforce the stated business rules. An order item must have a quantity more than zero. The normalisation examples show the sample data at 1NF, 2NF and 3NF. All 13 deliberately invalid inserts were rejected without changing the valid sample rows.
 
 ![E-commerce Platform ER diagram](images/Ejiyooye_Oluwapelumi_301877375_ERDiagram.png)
 
@@ -22,7 +22,7 @@ I ran four SQL queries against the sample records. The join returned 1 rows and 
 
 ## Portfolio 3: Transactions and Concurrency
 
-I used a temporary counter on product to test COMMIT, ROLLBACK and READ COMMITTED isolation. The uncommitted update remained hidden from the other session, and ROLLBACK restored the earlier committed value. Without locking, two increments left the counter at 2. With SELECT FOR UPDATE, Session B waited for Session A and the final value was 3. The helper is confined to this exercise; the case's original business fields stay unchanged.
+I used a temporary counter on product to test COMMIT, ROLLBACK and READ COMMITTED isolation. The uncommitted update remained unaccessible from the other session, and ROLLBACK restored the earlier committed value. Without locking, two increments left the counter at 2. With SELECT FOR UPDATE, Session B waited for Session A and the final value was 3. The helper is confined to this exercise; the case's original business fields stay unchanged.
 
 ## Portfolio 4: NoSQL and Advanced Data Models
 
@@ -39,11 +39,11 @@ The portfolio folders contain the SQL and JavaScript, explanations, query plans,
 
 ## Portfolio 5: Distributed and Cloud Database Exercise
 
-I proposed three MongoDB replica members across separate failure zones. The discussion covers primary elections, majority acknowledgement, secondary lag and sharding trade-offs for order_events. Replication supports availability, while backups address recovery. PostgreSQL needs its own availability plan. This is the permitted discussion option; no live replica set or failover test was deployed.
+I recommended three MongoDB replica members across separate failure zones. The covers primary elections, majority acknowledgement, secondary lag and sharding trade-offs for order_events. Replication supports availability, while backups address recovery. PostgreSQL needs its own availability plan. This is the permitted discussion option; no live replica set or failover test was deployed.
 
 ## Individual reflection
 
-I kept customer, product, order_header, order_item in separate tables so their details could be maintained without repeating them in every related record. An order item must have a quantity greater than zero. The constraint tests check this alongside the required values and record links. One issue illustrated by the two-session exercise is that both sessions can read the same value before either update is committed. Locking the row before reading preserves both increments. The index comparison also shows why I need to check the execution plan as well as the final answer: the same result can require different amounts of database work.
+I stored customer, product, order_header, order_item in separate tables so their individual details could be maintained without repeating them in every related record. An order item should have a quantity greater than zero. The limitation tests check this alongside the required values and record links. One issue analysed by the two-session exercise is that both sessions can read the same value before either update is committed. Ensuring the row before reading preserves both increments. The index comparison also shows why I need to check the execution plan as well as the final answer: the same result can require different amounts of database work.
 
 ## AI-use declaration
 
